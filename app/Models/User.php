@@ -9,8 +9,9 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
+use Devdojo\Auth\Models\User as AuthUser;
 
-class User extends Authenticatable
+class User extends AuthUser
 {
     use HasApiTokens;
     use HasFactory;
