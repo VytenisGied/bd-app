@@ -55,8 +55,8 @@
     <body>
         <div id="main">
             <div class="fof">
-                <h1>Ačiū! Iki kitų susitikimų!</h1>
-                <h3>Galite uždaryti puslapį</h3>
+                <h1>{{ $heading }}</h1>
+                <h3>{{ $subheading }}</h3>
             </div>
         </div>
     </body>

@@ -22,9 +22,9 @@ Route::get('/invitations/accept/{token}', function ($token) {
         $invitation->accepted = true;
         $invitation->responded = true;
         $invitation->save();
-        return view('invite-accepted');
+        return view('invite-response', ['heading' => 'Ačiū! Lauksime susitinkant!', 'subheading' => 'Galite uždaryti puslapį']);
     }
-    return 'Invitation not found';
+    return view('invite-response', ['heading' => 'Klaida! Pakvietimas nerastas', 'subheading' => 'Bandykite dar kartą']);
 })->name('invitations.accept');
 
 Route::get('/invitations/decline/{token}', function ($token) {
@@ -33,7 +33,7 @@ Route::get('/invitations/decline/{token}', function ($token) {
         $invitation->accepted = false;
         $invitation->responded = true;
         $invitation->save();
-        return view('invite-declined');
+        return view('invite-response', ['heading' => 'Ačiū! Iki kitų susitikimų!', 'subheading' => 'Galite uždaryti puslapį']);
     }
-    return 'Invitation not found';
+    return view('invite-response', ['heading' => 'Klaida! Pakvietimas nerastas', 'subheading' => 'Bandykite dar kartą']);
 })->name('invitations.decline');
